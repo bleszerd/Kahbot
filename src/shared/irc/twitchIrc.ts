@@ -1,7 +1,7 @@
 import tmi from "tmi.js";
 
 import ChannelBoardService from "../../service/ChannelService";
-import axiosClient from "./client";
+import axiosClient from "../connection/client";
 
 import { Emotes } from "../../utils/emotes";
 

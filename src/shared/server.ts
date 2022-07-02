@@ -1,9 +1,9 @@
 import "dotenv/config";
 
 import express from "express";
-import { setupTwitchIrc } from "./connection/twitchIrc";
-
 import mainRouter from "./routes/app.routes";
+
+import { setupTwitchIrc } from "./irc/twitchIrc";
 
 const app = express();
 
