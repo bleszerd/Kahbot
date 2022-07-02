@@ -1,0 +1,1 @@
+web: node prod/shared/server.js
