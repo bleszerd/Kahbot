@@ -1,0 +1,23 @@
+{
+  "name": "kahbot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start:dev": "yarn ts-node src/shared/server.ts",
+    "start:prod": "node prod/shared/server.js",
+    "build": "yarn tsc"
+  },
+  "dependencies": {
+    "@types/node": "^18.0.0",
+    "axios": "^0.27.2",
+    "dotenv": "^16.0.1",
+    "mongoose": "^6.4.1",
+    "tmi.js": "^1.8.5"
+  },
+  "devDependencies": {
+    "@types/tmi.js": "^1.8.1",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.4"
+  }
+}
