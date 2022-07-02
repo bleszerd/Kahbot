@@ -1,36 +1,18 @@
 import "dotenv/config";
-import tmi from "tmi.js";
-import ChannelBoardService from "../service/ChannelService";
-import { Emotes } from "../utils/emotes";
-import axiosClient from "./connection/client";
 
-const port = process.env.PORT || 8080;
+import express from "express";
+import { setupTwitchIrc } from "./connection/twitchIrc";
 
-const client = new tmi.Client({
-  options: { debug: true },
-  identity: {
-    username: `${process.env.TWITCH_USERNAME}`,
-    password: `oauth:${process.env.TWITCH_OAUTH}`,
-  },
-  channels: [`${process.env.TWITCH_CHANNEL}`],
-});
+import mainRouter from "./routes/app.routes";
 
-client.connect().catch(console.error);
+const app = express();
 
-client.on("message", (channel, tags, message, self) => {
-  const channelService = new ChannelBoardService(axiosClient);
+const PORT = process.env.PORT || 3333;
 
-  if (self) return;
+app.use(mainRouter);
 
-  if (message.trim().toLowerCase() === "!saudade") {
-    channelService.getChannelDowntime().then((downtimeData) => {
-      if (downtimeData) {
-        const { channelName, daysOffline } = downtimeData;
-        client.say(
-          channel,
-          `${channelName} já está offline há ${daysOffline} dias ${Emotes.SAD_RAIN}`
-        );
-      }
-    });
-  }
+app.listen(PORT, () => {
+  console.log(`HTTP App Running at port ${PORT}!`);
+
+  setupTwitchIrc();
 });
