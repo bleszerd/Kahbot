@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start:dev": "yarn ts-node src/shared/server.ts",
-    "start:prod": "node prod/shared/server.js",
+    "start": "node prod/shared/server.js",
     "build": "npx tsc"
   },
   "dependencies": {
