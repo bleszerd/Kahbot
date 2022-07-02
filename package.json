@@ -6,8 +6,7 @@
   "scripts": {
     "start:dev": "yarn ts-node src/shared/server.ts",
     "start:prod": "node prod/shared/server.js",
-    "build": "yarn tsc",
-    "prebuild": "yarn build"
+    "build": "npx tsc"
   },
   "dependencies": {
     "@types/node": "^18.0.0",
