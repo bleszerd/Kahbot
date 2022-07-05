@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 
-class MainAppController {
+class HealthCheckController {
   healthCheck(_: Request, res: Response) {
     const healthData = {
       health: true,
@@ -11,4 +11,4 @@ class MainAppController {
   }
 }
 
-export default MainAppController;
+export default HealthCheckController;

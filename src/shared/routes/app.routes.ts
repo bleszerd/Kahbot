@@ -1,10 +1,12 @@
 import { Router } from "express";
-import MainAppController from "../../controller/MainAppController";
+
+import commandsRouter from "./commands.routes";
+import healthCheckRouter from "./healthCheck.routes";
 
 const mainRouter = Router();
 
-const mainAppController = new MainAppController();
+mainRouter.use(healthCheckRouter);
 
-mainRouter.get("/", mainAppController.healthCheck);
+mainRouter.use("/commands", commandsRouter);
 
 export default mainRouter;

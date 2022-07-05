@@ -1,9 +1,10 @@
 import tmi from "tmi.js";
 
-import ChannelBoardService from "../../service/ChannelService";
+import ChannelBoardService from "../../service/ChannelService/ChannelService";
+
 import axiosClient from "../connection/client";
 
-import { Emotes } from "../../utils/emotes";
+import { Emotes } from "../utils/emotes";
 
 export const setupTwitchIrc = () => {
   const client = new tmi.Client({

@@ -1,7 +1,7 @@
 import { AxiosInstance } from "axios";
-import endpointBuilder from "../shared/connection/endpointBuilder";
-import { getDateDifference } from "../utils/date/date";
-import { IChannelVodsApiResponse } from "../utils/date/types";
+import endpointBuilder from "../../shared/connection/endpointBuilder";
+import { getDateDifference } from "../../shared/utils/date/date";
+import { IChannelVodsApiResponse } from "../../shared/utils/date/types";
 
 class ChannelBoardService {
   constructor(private axiosClient: AxiosInstance) {}
