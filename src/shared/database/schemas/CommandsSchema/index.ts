@@ -1,14 +1,9 @@
 import { model, Schema, Types } from "mongoose";
 import { ICommand } from "./types";
 
-/*
-  alias: string;
-  response: string;
-  replaceWith: string[];
-*/
 const CommandSchema = new Schema(
   {
-    alias: { type: String },
+    alias: { type: String, unique: true },
     response: { type: String },
     replaces: {
       type: [

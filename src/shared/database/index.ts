@@ -9,8 +9,6 @@ if (!connectionUri) {
 }
 
 const connectToDatabase = async () => {
-  console.log(connectionUri);
-
   await mongoose.connect(connectionUri);
 
   return true;

@@ -12,4 +12,12 @@ commandsRouter.post(
   commandsController.getCommandResponse
 );
 
+commandsRouter.get("/getCommand", commandsController.getCommand);
+
+commandsRouter.get("/getAllCommands", commandsController.getAllCommands);
+
+commandsRouter.put("/updateCommand", commandsController.updateCommand);
+
+commandsRouter.delete("/deleteCommand", commandsController.deleteCommand);
+
 export default commandsRouter;
